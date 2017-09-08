@@ -2,7 +2,7 @@
 
 A practical application for the booking area with the jQuery framework.
 
-At first, there are TextBoxes created for check-in and check-out dates.
+At first, there are textboxes created for check-in and check-out dates.
 
 If the user does not fill these two textboxes, an error message will be received via the button to click on to make an extra date selection.
 
