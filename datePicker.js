@@ -18,24 +18,26 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-$('span[name=datePickerParagraph]:last')
-
 function addNewElements() {
 
-    if ((!($('input[name=from]').last().val().length > 0)) && (!($('input[name=to]').last().val().length > 0))) {
-        $('span[name=datePickerParagraph]:last').empty();
-        $('span[name=datePickerParagraph]:last').append('<span class="label label-danger">' + '<strong>' + "Dikkat! " + '</strong>' + "Giriş ve çıkış tarihini boş bıraktınız." + '</span>');
+    var from = $('input[name=from]').last().val().length;
+    var to = $('input[name=to]').last().val().length
+    var lastDateTimePickerParagraph = $('span[name=datePickerParagraph]:last');
+ 
+    if ((from <= 0) && (to <= 0)) {
+        lastDateTimePickerParagraph.empty();
+        lastDateTimePickerParagraph.append('<span class="label label-danger">' + '<strong>' + "Dikkat! " + '</strong>' + "Giriş ve çıkış tarihini boş bıraktınız." + '</span>');
     }
-    else if (!($('input[name=from]').last().val().length > 0)) {
-        $('span[name=datePickerParagraph]:last').empty();
-        $('span[name=datePickerParagraph]:last').append('<span class="label label-danger">' + '<strong>' + "Dikkat! " + '</strong>' + "Giriş tarihini boş bıraktınız." + '</span>');
+    else if (from <= 0) {
+        lastDateTimePickerParagraph.empty();
+        lastDateTimePickerParagraph.append('<span class="label label-danger">' + '<strong>' + "Dikkat! " + '</strong>' + "Giriş tarihini boş bıraktınız." + '</span>');
     }
-    else if (!($('input[name=to]').last().val().length > 0)) {
-        $('span[name=datePickerParagraph]:last').empty();
-        $('span[name=datePickerParagraph]:last').append('<span class="label label-danger">' + '<strong>' + "Dikkat! " + '</strong>' + "Çıkış tarihini boş bıraktınız." + '</span>');
+    else if (to <= 0) {
+        lastDateTimePickerParagraph.empty();
+        lastDateTimePickerParagraph.append('<span class="label label-danger">' + '<strong>' + "Dikkat! " + '</strong>' + "Çıkış tarihini boş bıraktınız." + '</span>');
     }
     else {
-        $('span[name=datePickerParagraph]:last').empty();
+        lastDateTimePickerParagraph.empty();
         if (i == i) {
             i++; j++;
             var aa = "#from" + i;
