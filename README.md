@@ -13,3 +13,5 @@ If the user makes more than one choice, the other dates will never conflict with
 For example; the first day that can be selected as the second check-in date will be one day after the first check-out date.
 
 In addition, Bootstrap has been used as a CSS library for a better view.
+
+https://burakcantimucin.github.io/AddingDatesMoreThanOne/
